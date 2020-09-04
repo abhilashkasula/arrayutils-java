@@ -10,11 +10,11 @@ public class ArrayMethods {
     }
 
     public static <I, O> O[] map(I[] elements, Mapper<I, O> mapper) {
-        final ArrayList<O> us = new ArrayList<>();
+        final ArrayList<O> mapped = new ArrayList<>();
         for (I element : elements) {
-            us.add(mapper.apply(element));
+            mapped.add(mapper.apply(element));
         }
-        return (O[]) us.toArray();
+        return (O[]) mapped.toArray();
     }
 
     public static <I> I[] filter(I[] elements, Predicate<I> predicate) {
