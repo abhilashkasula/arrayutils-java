@@ -7,6 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArrayMethodsTest {
 
     @Test
+    void forEach() {
+        ArrayMethods.<String >forEach(new String[]{"hello"}, (s) -> {
+            assertTrue(s == "hello");
+        });
+    }
+
+    @Test
     void map() {
         final Integer[] ints = {1, 2, 3, 4};
         final String[] expected1 = {"1", "2", "3", "4"};

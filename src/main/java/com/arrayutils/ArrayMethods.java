@@ -3,6 +3,12 @@ package com.arrayutils;
 import java.util.ArrayList;
 
 public class ArrayMethods {
+    public static <I> void forEach(I[] elements, Consumer<I> consumer) {
+        for (I element : elements) {
+            consumer.apply(element);
+        }
+    }
+
     public static <I, O> O[] map(I[] elements, Mapper<I, O> mapper) {
         final ArrayList<O> us = new ArrayList<>();
         for (I element : elements) {
